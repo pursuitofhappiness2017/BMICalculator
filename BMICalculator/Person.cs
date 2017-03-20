@@ -55,7 +55,9 @@ namespace Person
     {
         public Women(double height, double weight) : base(height, weight)
         {
+            underweightBMI = 18;
 
+            overweightBMI = 22;
         }
     }
 }

@@ -58,7 +58,7 @@ namespace UnitTestForBMICalc
             //Arrange
             var expect = "太瘦";
 
-            var person = new Women(160, 50);
+            var person = new Women(160, 40);
 
             //Act
             var actual = person.CalculateBMI();
