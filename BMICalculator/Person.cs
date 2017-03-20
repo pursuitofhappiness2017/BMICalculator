@@ -11,9 +11,9 @@ namespace Person
 
         public double Height { get; private set; }
 
-        protected int underweightBMI { get; set; }
+        protected abstract int underweightBMI { get; }
 
-        protected int overweightBMI { get; set; }
+        protected abstract int overweightBMI { get; }
 
         public Person(double height, double weight)
         {
@@ -45,9 +45,17 @@ namespace Person
     {
         public Men(double height, double weight) : base(height, weight)
         {
-            underweightBMI = 20;
 
-            overweightBMI = 25;
+        }
+
+        protected override int underweightBMI
+        {
+            get { return 20; }
+        }
+
+        protected override int overweightBMI
+        {
+            get { return 25; }
         }
     }
 
@@ -55,9 +63,17 @@ namespace Person
     {
         public Women(double height, double weight) : base(height, weight)
         {
-            underweightBMI = 18;
 
-            overweightBMI = 22;
+        }
+
+        protected override int underweightBMI
+        {
+            get { return 18; }
+        }
+
+        protected override int overweightBMI
+        {
+            get { return 22; }
         }
     }
 }
