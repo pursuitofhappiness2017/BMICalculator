@@ -26,6 +26,10 @@ namespace Person
             {
                 return "太瘦";
             }
+            else if (BMI > 25)
+            {
+                return "太胖";
+            }
 
             return "";
         }
