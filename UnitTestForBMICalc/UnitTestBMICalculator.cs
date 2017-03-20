@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BMICalculator;
+using Person;
 
 namespace UnitTestForBMICalc
 {
@@ -8,13 +8,15 @@ namespace UnitTestForBMICalc
     public class UnitTestBMICalculator
     {
         [TestMethod]
-        public void Input_BMI_19_Output_太瘦()
+        public void Input_Person_Height_170CM_Weight_55KG_Output_太瘦()
         {
             //Arrange
             var expect = "太瘦";
 
+            var person = new Person.Person(170, 55);
+
             //Act
-            var actual = new Person().CalculateBMI();
+            var actual = person.CalculateBMI();
 
             //Assert
             Assert.AreEqual(expect, actual);
