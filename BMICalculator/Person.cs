@@ -5,11 +5,15 @@ using System.Text;
 
 namespace Person
 {
-    public class Person
+    public abstract class Person
     {
-        public double Weight { get; set; }
+        public double Weight { get; private set; }
 
-        public double Height { get; set; }
+        public double Height { get; private set; }
+
+        protected int underweightBMI { get; set; }
+
+        protected int overweightBMI { get; set; }
 
         public Person(double height, double weight)
         {
@@ -20,18 +24,38 @@ namespace Person
 
         public string CalculateBMI()
         {
-            var BMI = this.Weight / (this.Height * this.Height);
+            var bmi = Weight / (Height * Height);
 
-            if (BMI < 20)
+            var bmiCategory = "適中";
+
+            if (bmi < underweightBMI)
             {
                 return "太瘦";
             }
-            else if (BMI > 25)
+            else if (bmi > overweightBMI)
             {
                 return "太胖";
             }
 
-            return "";
+            return bmiCategory;
+        }
+    }
+
+    public class Men : Person
+    {
+        public Men(double height, double weight) : base(height, weight)
+        {
+            underweightBMI = 20;
+
+            overweightBMI = 25;
+        }
+    }
+
+    public class Women : Person
+    {
+        public Women(double height, double weight) : base(height, weight)
+        {
+
         }
     }
 }
