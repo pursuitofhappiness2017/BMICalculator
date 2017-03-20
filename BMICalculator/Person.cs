@@ -30,11 +30,11 @@ namespace Person
 
             if (bmi < underweightBMI)
             {
-                return "太瘦";
+                bmiCategory = "太瘦";
             }
             else if (bmi > overweightBMI)
             {
-                return "太胖";
+                bmiCategory = "太胖";
             }
 
             return bmiCategory;
