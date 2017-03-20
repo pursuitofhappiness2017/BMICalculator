@@ -36,5 +36,20 @@ namespace UnitTestForBMICalc
             //Assert
             Assert.AreEqual(expect, actual);
         }
+
+        [TestMethod]
+        public void Input_Person_Height_170CM_Weight_60KG_Output_適中()
+        {
+            //Arrange
+            var expect = "適中";
+
+            var person = new Person.Person(170, 60);
+
+            //Act
+            var actual = person.CalculateBMI();
+
+            //Assert
+            Assert.AreEqual(expect, actual);
+        }
     }
 }
