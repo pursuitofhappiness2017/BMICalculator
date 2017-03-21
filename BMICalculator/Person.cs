@@ -15,7 +15,7 @@ namespace Person
 
         protected abstract int overweightBMI { get; }
 
-        public Person(double height, double weight)
+        protected Person(double height, double weight)
         {
             Weight = weight;
 
